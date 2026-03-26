@@ -1,0 +1,72 @@
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-lg);
+}
+
+.product-grid-item {
+  animation: fadeInUp var(--transition-base) forwards;
+  opacity: 0;
+}
+
+/* Skeleton Loading */
+.product-skeleton {
+  background: var(--background-primary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+
+.skeleton-image {
+  padding-top: 60%;
+}
+
+.skeleton-content {
+  padding: var(--spacing-md);
+}
+
+.skeleton-title {
+  height: 24px;
+  width: 80%;
+  margin-bottom: var(--spacing-sm);
+  border-radius: var(--radius-sm);
+}
+
+.skeleton-text {
+  height: 16px;
+  width: 60%;
+  margin-bottom: var(--spacing-sm);
+  border-radius: var(--radius-sm);
+}
+
+.skeleton-footer {
+  height: 40px;
+  width: 100%;
+  margin-top: var(--spacing-md);
+  border-radius: var(--radius-md);
+}
+
+/* Responsive Grid */
+@media (max-width: 1200px) {
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Empty State (already in global, but enhanced here) */
+.product-grid + .empty-state {
+  grid-column: 1 / -1;
+}
+

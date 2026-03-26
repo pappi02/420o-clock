@@ -1,0 +1,200 @@
+/* ETA Indicator Styles - 420o'clock Brand */
+
+.eta-indicator {
+  background: var(--background-primary);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-md) var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  box-shadow: var(--card-shadow);
+  border-left: 4px solid;
+  transition: all var(--transition-base);
+}
+
+.eta-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.eta-icon-wrapper .eta-icon {
+  font-size: 1.5rem;
+  filter: grayscale(1) brightness(10);
+}
+
+.eta-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.eta-main {
+  display: flex;
+  align-items: baseline;
+  gap: var(--spacing-xs);
+}
+
+.eta-value {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.eta-unit {
+  font-size: var(--text-body);
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.eta-sub {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-xs);
+}
+
+.eta-distance {
+  font-size: var(--text-body-sm);
+  color: var(--text-secondary);
+}
+
+.eta-status {
+  font-size: var(--text-body-sm);
+  font-weight: 600;
+}
+
+.eta-progress {
+  width: 100px;
+  height: 6px;
+  background: var(--background-tertiary);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.eta-progress .progress-bar {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width 1s linear;
+}
+
+/* Compact version */
+.eta-indicator.compact {
+  background: var(--background-primary);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-left: 3px solid;
+}
+
+.eta-compact-content {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  width: 100%;
+}
+
+.eta-compact-content .eta-icon {
+  font-size: 1.25rem;
+}
+
+.eta-compact-value {
+  font-size: var(--text-body-lg);
+  font-weight: 700;
+}
+
+.eta-compact-distance {
+  margin-left: auto;
+  font-size: var(--text-body-sm);
+  color: var(--text-secondary);
+}
+
+/* Large version for detailed tracking */
+.eta-indicator.large {
+  padding: var(--spacing-lg);
+  flex-direction: column;
+  text-align: center;
+}
+
+.eta-indicator.large .eta-icon-wrapper {
+  width: 64px;
+  height: 64px;
+}
+
+.eta-indicator.large .eta-icon-wrapper .eta-icon {
+  font-size: 2rem;
+}
+
+.eta-indicator.large .eta-value {
+  font-size: 3rem;
+}
+
+.eta-indicator.large .eta-progress {
+  width: 100%;
+  height: 8px;
+  margin-top: var(--spacing-md);
+}
+
+/* Animated countdown effect */
+@keyframes eta-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.eta-indicator.urgent .eta-value {
+  animation: eta-pulse 1s ease-in-out infinite;
+}
+
+/* Mobile responsive */
+@media (max-width: 480px) {
+  .eta-indicator {
+    padding: var(--spacing-sm) var(--spacing-md);
+    gap: var(--spacing-sm);
+  }
+  
+  .eta-icon-wrapper {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .eta-icon-wrapper .eta-icon {
+    font-size: 1.25rem;
+  }
+  
+  .eta-value {
+    font-size: 1.5rem;
+  }
+  
+  .eta-progress {
+    width: 60px;
+  }
+  
+  .eta-sub {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+}
+
+/* Arrival notification style */
+.eta-arriving {
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.1) 0%, rgba(135, 159, 133, 0.1) 100%);
+  border: 1px solid var(--success);
+}
+
+.eta-arriving .eta-icon-wrapper {
+  background: var(--success) !important;
+}
+
+.eta-arriving .eta-value {
+  color: var(--success) !important;
+}
+

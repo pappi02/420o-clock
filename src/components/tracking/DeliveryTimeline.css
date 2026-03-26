@@ -1,0 +1,225 @@
+/* Delivery Timeline Styles - 420o'clock Brand */
+
+.delivery-timeline {
+  background: var(--background-secondary);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-lg);
+}
+
+.timeline-header h4 {
+  font-size: var(--text-body-sm);
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-lg);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.timeline-track {
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline-step {
+  display: flex;
+  gap: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+  position: relative;
+}
+
+.timeline-step:last-child {
+  padding-bottom: 0;
+}
+
+.step-connector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.step-marker {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--background-tertiary);
+  border: 2px solid var(--border-medium);
+  z-index: 1;
+}
+
+.timeline-step.completed .step-marker {
+  background: var(--success);
+  border-color: var(--success);
+}
+
+.timeline-step.current .step-marker {
+  background: var(--brand-gold);
+  border-color: var(--brand-gold);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(246, 174, 45, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(246, 174, 45, 0);
+  }
+}
+
+.marker-icon {
+  font-size: var(--text-body-sm);
+  color: var(--text-tertiary);
+}
+
+.timeline-step.completed .marker-icon {
+  color: white;
+}
+
+.timeline-step.current .marker-icon {
+  color: var(--brand-midnight);
+}
+
+.step-line {
+  flex: 1;
+  width: 2px;
+  background: var(--border-medium);
+  min-height: 20px;
+}
+
+.step-line.completed {
+  background: var(--success);
+}
+
+.step-content {
+  flex: 1;
+  padding-bottom: var(--spacing-md);
+}
+
+.timeline-step:last-child .step-content {
+  padding-bottom: 0;
+}
+
+.step-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.step-icon {
+  font-size: 1rem;
+}
+
+.step-label {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.timeline-step.completed .step-label {
+  color: var(--text-secondary);
+}
+
+.timeline-step.current .step-label {
+  color: var(--brand-midnight);
+  font-weight: 600;
+}
+
+.current-badge {
+  background: var(--brand-gold);
+  color: var(--brand-midnight);
+  font-size: var(--text-caption);
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.02em;
+}
+
+.step-time {
+  display: block;
+  font-size: var(--text-body-sm);
+  color: var(--text-secondary);
+  margin-top: var(--spacing-xs);
+}
+
+.step-description {
+  font-size: var(--text-body-sm);
+  color: var(--brand-sage);
+  margin-top: var(--spacing-xs);
+  padding: var(--spacing-sm);
+  background: rgba(135, 159, 133, 0.1);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--brand-sage);
+}
+
+/* Compact version */
+.delivery-timeline.compact {
+  background: transparent;
+  padding: 0;
+}
+
+.delivery-timeline.compact .timeline-step {
+  padding-bottom: var(--spacing-sm);
+  gap: var(--spacing-sm);
+}
+
+.delivery-timeline.compact .step-marker {
+  width: 20px;
+  height: 20px;
+  font-size: var(--text-caption);
+}
+
+.delivery-timeline.compact .step-label {
+  font-size: var(--text-body-sm);
+}
+
+/* Mobile responsive */
+@media (max-width: 480px) {
+  .delivery-timeline {
+    padding: var(--spacing-md);
+  }
+  
+  .step-marker {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .step-icon {
+    font-size: 0.875rem;
+  }
+  
+  .step-label {
+    font-size: var(--text-body-sm);
+  }
+  
+  .step-description {
+    font-size: var(--text-caption);
+  }
+}
+
+/* Animated current step */
+.timeline-step.current {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Status colors */
+.timeline-step.completed {
+  opacity: 0.7;
+}
+
+.timeline-step.current {
+  opacity: 1;
+}
+

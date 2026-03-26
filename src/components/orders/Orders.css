@@ -1,0 +1,676 @@
+.orders-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.orders-header {
+  margin-bottom: 2rem;
+}
+
+.orders-header h1 {
+  font-size: 1.75rem;
+  color: var(--text-primary);
+}
+
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.order-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.order-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.order-card-header h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.order-card-header .order-date {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.order-card-body {
+  padding: 1.5rem;
+  display: flex;
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .order-card-body {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.order-items {
+  flex: 1;
+}
+
+.order-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 0;
+}
+
+.order-item-image {
+  width: 50px;
+  height: 50px;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.order-item-details h4 {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.order-item-details p {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.order-summary {
+  min-width: 200px;
+  text-align: right;
+}
+
+.order-summary .total {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--brand-sage);
+}
+
+.order-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+.order-status.awaiting_location {
+  background: rgba(255, 152, 0, 0.1);
+  color: #FF9800;
+}
+
+.order-status.processing {
+  background: rgba(33, 150, 243, 0.1);
+  color: #2196F3;
+}
+
+.order-status.preparing {
+  background: rgba(156, 39, 176, 0.1);
+  color: #9C27B0;
+}
+
+.order-status.out_for_delivery {
+  background: rgba(76, 175, 80, 0.1);
+  color: #4CAF50;
+}
+
+.order-status.delivered {
+  background: rgba(76, 175, 80, 0.1);
+  color: #4CAF50;
+}
+
+.order-card-actions {
+  display: flex;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.order-action-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.order-action-btn.primary {
+  background: var(--brand-sage);
+  color: white;
+  border: none;
+}
+
+.order-action-btn.primary:hover {
+  background: var(--brand-sage-dark);
+}
+
+.order-action-btn.secondary {
+  background: transparent;
+  color: var(--brand-sage);
+  border: 1px solid var(--brand-sage);
+}
+
+.order-action-btn.secondary:hover {
+  background: rgba(167, 199, 231, 0.1);
+}
+
+.order-action-btn.whatsapp {
+  background: #25D366;
+  color: white;
+  border: none;
+}
+
+.order-action-btn.whatsapp:hover {
+  background: #128C7E;
+}
+
+/* Order Tracker */
+.order-tracker {
+  padding: 2rem;
+}
+
+.order-tracker-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.order-tracker-header h2 {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+}
+
+.tracking-map {
+  height: 250px;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+}
+
+.driver-info {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid var(--border-color);
+  margin-bottom: 2rem;
+}
+
+.driver-info-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.driver-avatar {
+  width: 50px;
+  height: 50px;
+  background: var(--brand-sage);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.driver-details h4 {
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.driver-details p {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.driver-contact {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.driver-contact a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.875rem;
+}
+
+.order-timeline {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid var(--border-color);
+}
+
+.order-timeline h3 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.timeline-list {
+  list-style: none;
+  padding: 0;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  position: relative;
+}
+
+.timeline-item:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  left: 11px;
+  top: 32px;
+  bottom: 0;
+  width: 2px;
+  background: var(--border-color);
+}
+
+.timeline-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.timeline-icon.completed {
+  background: #4CAF50;
+  color: white;
+}
+
+.timeline-icon.current {
+  background: var(--brand-sage);
+  color: white;
+}
+
+.timeline-icon.pending {
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+}
+
+.timeline-content {
+  flex: 1;
+}
+
+.timeline-content h4 {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.timeline-content p {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.orders-empty {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.orders-empty h2 {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.orders-empty p {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+/* Order Tracker Enhancements */
+.order-tracker {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.order-tracker-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.order-tracker-header h2 {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+}
+
+/* Scheduled Delivery Banner */
+.scheduled-delivery-banner {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: linear-gradient(135deg, rgba(246, 174, 45, 0.1) 0%, rgba(247, 195, 92, 0.05) 100%);
+  border: 1px solid var(--brand-gold);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+.scheduled-delivery-banner .banner-icon {
+  font-size: 1.5rem;
+}
+
+.scheduled-delivery-banner .banner-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.scheduled-delivery-banner .banner-label {
+  font-size: var(--text-caption);
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.scheduled-delivery-banner .banner-value {
+  font-weight: 600;
+  color: var(--brand-midnight);
+}
+
+/* Tracking Map Container */
+.tracking-map-container {
+  margin-bottom: var(--spacing-lg);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+}
+
+/* ETA Section */
+.eta-section {
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Order Status Banner */
+.order-status-banner {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+.order-status-banner .status-icon {
+  font-size: 1.25rem;
+}
+
+.order-status-banner .status-label {
+  font-weight: 600;
+  flex: 1;
+}
+
+.order-status-banner .eta-text {
+  font-size: var(--text-body-sm);
+  color: var(--text-secondary);
+}
+
+/* Order Details Section */
+.order-details-section {
+  background: var(--background-secondary);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+.order-details-section h3 {
+  font-size: var(--text-body);
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-md);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.order-details-section .order-detail-row {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--spacing-sm) 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.order-details-section .order-detail-row:last-child {
+  border-bottom: none;
+}
+
+.order-details-section .label {
+  color: var(--text-secondary);
+}
+
+.order-details-section .value {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Delivery Instructions */
+.delivery-instructions {
+  background: var(--background-secondary);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+.delivery-instructions h4 {
+  font-size: var(--text-body);
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.delivery-instructions p {
+  color: var(--text-primary);
+  font-size: var(--text-body-sm);
+}
+
+/* Tracker Actions */
+.tracker-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+}
+
+.tracker-actions .order-action-btn {
+  flex: 1;
+  padding: var(--spacing-md);
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.tracker-actions .order-action-btn.whatsapp {
+  background: #25D366;
+  color: white;
+  border: none;
+}
+
+.tracker-actions .order-action-btn.whatsapp:hover {
+  background: #128C7E;
+}
+
+.tracker-actions .order-action-btn.secondary {
+  background: transparent;
+  border: 1px solid var(--border-medium);
+  color: var(--text-primary);
+}
+
+.tracker-actions .order-action-btn.secondary:hover {
+  background: var(--background-tertiary);
+}
+
+/* ===========================================
+   FIREBASE / FIRESTORE STYLES
+   =========================================== */
+
+/* Firestore Status Indicator */
+.firestore-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.firestore-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4CAF50;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Firestore Badge */
+.firestore-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 195, 0, 0.1);
+  border: 1px solid rgba(255, 195, 0, 0.3);
+  border-radius: 20px;
+  font-size: 0.875rem;
+  color: #F6AE2D;
+  margin-top: 1rem;
+}
+
+/* Firebase Notice in Checkout */
+.firebase-notice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: rgba(255, 195, 0, 0.1);
+  border-radius: 8px;
+  font-size: 0.875rem;
+  color: #F6AE2D;
+  margin: 1rem 0;
+}
+
+.firebase-notice .firebase-icon {
+  font-size: 1.25rem;
+}
+
+/* Demo Notice */
+.demo-notice {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-top: 0.75rem;
+  padding: 0.5rem;
+  background: rgba(255, 152, 0, 0.1);
+  border-radius: 4px;
+}
+
+/* Order Scheduled Delivery Display */
+.order-scheduled-delivery {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: rgba(246, 174, 45, 0.1);
+  border-radius: 8px;
+  margin: 0 1.5rem;
+  font-size: 0.875rem;
+  color: var(--text-primary);
+}
+
+.order-scheduled-delivery .schedule-icon {
+  font-size: 1rem;
+}
+
+.order-scheduled-delivery .schedule-text {
+  font-weight: 500;
+}
+
+/* ===========================================
+   PAYMENT BUTTON STYLES
+   =========================================== */
+
+.payment-button {
+  width: 100%;
+  padding: 1rem;
+  background: var(--brand-sage);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  transition: all 0.2s;
+}
+
+.payment-button:hover:not(:disabled) {
+  background: var(--brand-sage-dark);
+  transform: translateY(-1px);
+}
+
+.payment-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.payment-button.disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.payment-button svg {
+  flex-shrink: 0;
+}
+

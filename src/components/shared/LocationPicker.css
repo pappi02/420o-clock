@@ -1,0 +1,106 @@
+.location-picker {
+  position: relative;
+}
+
+.location-trigger {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  transition: background-color var(--transition-fast);
+}
+
+.location-trigger:hover {
+  background-color: var(--background-tertiary);
+}
+
+.location-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--brand-gold);
+}
+
+.location-label {
+  font-size: var(--text-body-sm);
+  font-weight: 500;
+}
+
+.chevron-icon {
+  width: 16px;
+  height: 16px;
+  transition: transform var(--transition-fast);
+}
+
+.chevron-icon.open {
+  transform: rotate(180deg);
+}
+
+.location-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 280px;
+  background: var(--background-primary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--hover-shadow);
+  z-index: 1001;
+  animation: fadeInDown var(--transition-fast) forwards;
+  overflow: hidden;
+}
+
+.location-dropdown-header {
+  padding: var(--spacing-md);
+  background: var(--background-secondary);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.location-current {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: var(--text-body-sm);
+  color: var(--success);
+  font-weight: 500;
+}
+
+.clock-icon-small {
+  width: 16px;
+  height: 16px;
+}
+
+.location-list {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.location-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--spacing-md);
+  text-align: left;
+  transition: background-color var(--transition-fast);
+}
+
+.location-option:hover {
+  background-color: var(--background-secondary);
+}
+
+.location-option.active {
+  background-color: var(--brand-cream);
+}
+
+.location-name {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.location-time {
+  font-size: var(--text-body-sm);
+  color: var(--text-tertiary);
+}
+

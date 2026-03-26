@@ -1,0 +1,232 @@
+/* Cutoff Timer Styles - 420o'clock Brand */
+
+.cutoff-timer {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: var(--background-tertiary);
+  border-radius: var(--radius-full);
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-base);
+}
+
+.cutoff-timer.normal {
+  background: var(--background-tertiary);
+}
+
+.cutoff-timer.warning {
+  background: rgba(237, 106, 2, 0.1);
+  border: 1px solid var(--warning);
+}
+
+.cutoff-timer.critical {
+  background: rgba(211, 47, 47, 0.1);
+  border: 1px solid var(--error);
+  animation: pulse-border 1.5s ease-in-out infinite;
+}
+
+.cutoff-timer.expired {
+  background: rgba(244, 67, 54, 0.1);
+  border: 1px solid var(--error);
+}
+
+@keyframes pulse-border {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(211, 47, 47, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(211, 47, 47, 0);
+  }
+}
+
+.timer-icon-wrapper {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--background-primary);
+  flex-shrink: 0;
+}
+
+.cutoff-timer.normal .timer-icon-wrapper {
+  background: var(--brand-sage);
+}
+
+.cutoff-timer.warning .timer-icon-wrapper {
+  background: var(--warning);
+}
+
+.cutoff-timer.critical .timer-icon-wrapper {
+  background: var(--error);
+}
+
+.timer-icon {
+  font-size: 1.25rem;
+}
+
+.cutoff-timer.normal .timer-icon {
+  filter: grayscale(1) brightness(10);
+}
+
+.timer-icon {
+  filter: grayscale(1) brightness(10);
+}
+
+.timer-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.timer-label {
+  font-size: var(--text-body-sm);
+  color: var(--text-secondary);
+}
+
+.cutoff-timer.warning .timer-label {
+  color: var(--warning);
+  font-weight: 600;
+}
+
+.cutoff-timer.critical .timer-label {
+  color: var(--error);
+  font-weight: 700;
+}
+
+.timer-values {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.timer-unit {
+  display: flex;
+  align-items: baseline;
+  background: var(--background-primary);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+}
+
+.timer-value {
+  font-size: var(--text-body-lg);
+  font-weight: 700;
+  color: var(--brand-midnight);
+  font-variant-numeric: tabular-nums;
+  min-width: 20px;
+  text-align: center;
+}
+
+.cutoff-timer.warning .timer-value {
+  color: var(--warning);
+}
+
+.cutoff-timer.critical .timer-value {
+  color: var(--error);
+}
+
+.timer-unit-label {
+  font-size: var(--text-caption);
+  color: var(--text-secondary);
+  margin-left: 1px;
+}
+
+.timer-separator {
+  font-size: var(--text-body-lg);
+  font-weight: 700;
+  color: var(--text-secondary);
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.timer-sublabel {
+  font-size: var(--text-caption);
+  color: var(--text-tertiary);
+}
+
+.cutoff-timer.warning .timer-sublabel {
+  color: var(--warning);
+}
+
+.cutoff-timer.critical .timer-sublabel {
+  color: var(--error);
+}
+
+.timer-pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(211, 47, 47, 0.1) 0%, transparent 70%);
+  animation: pulse-bg 2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes pulse-bg {
+  0%, 100% {
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+/* Compact version for small spaces */
+.cutoff-timer.compact {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-lg);
+}
+
+.cutoff-timer.compact .timer-icon-wrapper {
+  width: 28px;
+  height: 28px;
+}
+
+.cutoff-timer.compact .timer-icon {
+  font-size: 0.875rem;
+}
+
+.cutoff-timer.compact .timer-values {
+  gap: 1px;
+}
+
+.cutoff-timer.compact .timer-unit {
+  padding: 1px 4px;
+}
+
+.cutoff-timer.compact .timer-value {
+  font-size: var(--text-body-sm);
+}
+
+.cutoff-timer.compact .timer-unit-label,
+.cutoff-timer.compact .timer-sublabel {
+  display: none;
+}
+
+/* Mobile responsive */
+@media (max-width: 480px) {
+  .cutoff-timer {
+    flex-direction: column;
+    text-align: center;
+    padding: var(--spacing-md);
+    border-radius: var(--radius-lg);
+  }
+  
+  .timer-content {
+    align-items: center;
+  }
+}
+

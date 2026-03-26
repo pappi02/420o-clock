@@ -1,0 +1,194 @@
+.product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Breadcrumbs */
+.product-breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--text-body-sm);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.breadcrumb-category {
+  color: var(--text-tertiary);
+}
+
+.breadcrumb-separator {
+  color: var(--text-tertiary);
+}
+
+.breadcrumb-brand {
+  color: var(--brand-sage);
+  font-weight: 600;
+}
+
+/* Title */
+.product-title {
+  font-family: var(--font-display);
+  font-size: var(--text-display);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin: 0;
+}
+
+/* Type & Potency */
+.product-type-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.product-type-badge {
+  display: inline-flex;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: var(--text-body-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.product-type-badge.hybrid {
+  background: linear-gradient(135deg, #9C27B0 0%, #E1BEE7 100%);
+  color: white;
+}
+
+.product-type-badge.sativa {
+  background: linear-gradient(135deg, #FF9800 0%, #FFE0B2 100%);
+  color: white;
+}
+
+.product-type-badge.indica {
+  background: linear-gradient(135deg, #3F51B5 0%, #C5CAE9 100%);
+  color: white;
+}
+
+.product-potency {
+  font-size: var(--text-body);
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* Rating */
+.product-rating {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.product-stars {
+  display: flex;
+  gap: 2px;
+}
+
+.product-stars .star-filled,
+.product-stars .star-empty {
+  font-size: 1.25rem;
+  color: var(--brand-gold);
+}
+
+.product-stars .star-empty {
+  color: var(--border-medium);
+}
+
+.product-rating-count {
+  font-size: var(--text-body-sm);
+  color: var(--text-secondary);
+}
+
+/* Grow Info */
+.product-grow-info {
+  display: flex;
+  gap: 24px;
+  padding: 12px 0;
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.grow-detail {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--text-body-sm);
+  color: var(--text-secondary);
+}
+
+.grow-icon {
+  font-size: 1.125rem;
+}
+
+/* Description */
+.product-short-description {
+  font-size: var(--text-body-lg);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Benefits */
+.product-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--text-body-sm);
+  color: var(--text-primary);
+}
+
+.benefit-check {
+  color: var(--success);
+  font-weight: bold;
+}
+
+.benefit-text {
+  text-transform: capitalize;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .product-title {
+    font-size: var(--text-h1);
+  }
+  
+  .product-type-row {
+    gap: 12px;
+  }
+  
+  .product-grow-info {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-title {
+    font-size: var(--text-h2);
+  }
+  
+  .product-type-badge {
+    font-size: var(--text-caption);
+    padding: 4px 10px;
+  }
+  
+  .product-potency {
+    font-size: var(--text-body-sm);
+  }
+  
+  .product-stars .star-filled,
+  .product-stars .star-empty {
+    font-size: 1rem;
+  }
+}
+

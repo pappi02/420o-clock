@@ -1,0 +1,68 @@
+.clock-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand-midnight);
+}
+
+.clock-logo--default {
+  width: 40px;
+  height: 40px;
+}
+
+.clock-logo--small {
+  width: 24px;
+  height: 24px;
+}
+
+.clock-logo--large {
+  width: 64px;
+  height: 64px;
+}
+
+.clock-icon {
+  width: 100%;
+  height: 100%;
+}
+
+.clock-hand {
+  transform-origin: 20px 20px;
+  transition: transform 0.5s ease;
+}
+
+.clock-logo:hover .clock-hand--hour {
+  transform: rotate(120deg);
+}
+
+.clock-logo:hover .clock-hand--minute {
+  transform: rotate(720deg);
+}
+
+.clock-logo--420 .clock-hand--hour {
+  transform: rotate(120deg) !important;
+}
+
+.clock-logo--420 .clock-hand--minute {
+  transform: rotate(120deg) !important;
+}
+
+.clock-logo--420 {
+  color: var(--brand-gold);
+  animation: goldGlow 2s ease-in-out infinite;
+}
+
+.clock-420 {
+  font-size: 6px;
+  font-weight: 700;
+  fill: var(--brand-gold);
+}
+
+@keyframes clockHandsMove {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(120deg);
+  }
+}
+

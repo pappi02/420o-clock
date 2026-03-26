@@ -1,0 +1,275 @@
+/* Driver Card Styles - 420o'clock Brand */
+
+.driver-card {
+  background: var(--background-primary);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-lg);
+  box-shadow: var(--card-shadow);
+}
+
+.driver-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.driver-card-header h4 {
+  font-size: var(--text-body-sm);
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.driver-status {
+  font-size: var(--text-body-sm);
+  color: var(--success);
+  font-weight: 500;
+}
+
+.driver-main {
+  display: flex;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+.driver-avatar-large {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--gradient-sage);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.75rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.driver-details {
+  flex: 1;
+}
+
+.driver-name {
+  font-size: var(--text-h3);
+  color: var(--brand-midnight);
+  margin-bottom: var(--spacing-xs);
+}
+
+.driver-rating {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-sm);
+}
+
+.rating-star {
+  font-size: 1rem;
+}
+
+.rating-value {
+  font-weight: 600;
+  color: var(--brand-midnight);
+}
+
+.rating-count {
+  color: var(--text-secondary);
+  font-size: var(--text-body-sm);
+}
+
+.driver-vehicle {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-size: var(--text-body-sm);
+  color: var(--text-secondary);
+}
+
+.vehicle-divider {
+  color: var(--border-medium);
+}
+
+.driver-actions {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.driver-action-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all var(--transition-base);
+}
+
+.driver-action-btn.call {
+  background: var(--background-secondary);
+  color: var(--brand-midnight);
+  border: 1px solid var(--border-light);
+}
+
+.driver-action-btn.call:hover {
+  background: var(--background-tertiary);
+  border-color: var(--brand-gold);
+}
+
+.driver-action-btn.whatsapp {
+  background: #25D366;
+  color: white;
+}
+
+.driver-action-btn.whatsapp:hover {
+  background: #128C7E;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+}
+
+.btn-icon {
+  font-size: 1.25rem;
+}
+
+.btn-text {
+  font-size: var(--text-body);
+}
+
+/* Compact version */
+.driver-card.compact {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--background-secondary);
+  border-radius: var(--radius-lg);
+}
+
+.driver-card.compact .driver-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--gradient-sage);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.driver-card.compact .driver-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.driver-card.compact .driver-name {
+  font-size: var(--text-body-sm);
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.driver-card.compact .driver-rating {
+  font-size: var(--text-caption);
+  color: var(--text-secondary);
+}
+
+.driver-card.compact .driver-rating span:first-child {
+  font-size: 0.75rem;
+}
+
+.driver-card.compact .driver-actions.compact {
+  display: flex;
+  gap: var(--spacing-xs);
+}
+
+.driver-card.compact .driver-action-btn {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border-radius: 50%;
+  flex: none;
+}
+
+.driver-card.compact .btn-text {
+  display: none;
+}
+
+/* Mobile responsive */
+@media (max-width: 480px) {
+  .driver-card {
+    padding: var(--spacing-md);
+  }
+  
+  .driver-main {
+    gap: var(--spacing-md);
+  }
+  
+  .driver-avatar-large {
+    width: 56px;
+    height: 56px;
+    font-size: 1.5rem;
+  }
+  
+  .driver-name {
+    font-size: var(--text-body-lg);
+  }
+  
+  .driver-actions {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+  
+  .driver-action-btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+}
+
+/* Driver location card (during transit) */
+.driver-location-card {
+  background: linear-gradient(135deg, var(--brand-midnight) 0%, #1A4A40 100%);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-lg);
+  color: white;
+}
+
+.driver-location-card .card-title {
+  font-size: var(--text-body-sm);
+  opacity: 0.8;
+  margin-bottom: var(--spacing-md);
+}
+
+.driver-location-card .next-stop {
+  font-size: var(--text-body);
+  margin-bottom: var(--spacing-sm);
+}
+
+.driver-location-card .stop-details {
+  opacity: 0.7;
+  font-size: var(--text-body-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: var(--spacing-md);
+}
+
+.driver-location-card .eta-section {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.driver-location-card .live-badge {
+  background: rgba(76, 175, 80, 0.3);
+  color: #4CAF50;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  font-size: var(--text-caption);
+  font-weight: 600;
+}
+

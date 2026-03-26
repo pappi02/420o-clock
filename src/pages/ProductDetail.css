@@ -1,0 +1,121 @@
+.product-detail-page {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.product-detail-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 60px;
+}
+
+.product-images-column {
+  position: relative;
+}
+
+.product-info-column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Back Button */
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: var(--background-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  font-size: var(--text-body-sm);
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  margin-bottom: 24px;
+}
+
+.back-button:hover {
+  background: var(--brand-midnight);
+  color: white;
+  border-color: var(--brand-midnight);
+}
+
+.back-button svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Not Found */
+.product-not-found {
+  text-align: center;
+  padding: 80px 24px;
+}
+
+.product-not-found h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-h1);
+  color: var(--text-primary);
+  margin: 0 0 16px 0;
+}
+
+.product-not-found p {
+  font-size: var(--text-body);
+  color: var(--text-secondary);
+  margin: 0 0 32px 0;
+}
+
+.product-not-found .back-btn {
+  padding: 14px 28px;
+  background: var(--brand-midnight);
+  color: white;
+  border: none;
+  border-radius: var(--radius-lg);
+  font-size: var(--text-body);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.product-not-found .back-btn:hover {
+  background: #153D38;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .product-detail-container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  
+  .product-images-column {
+    max-width: 500px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-detail-page {
+    padding: 16px;
+  }
+  
+  .product-detail-container {
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+  
+  .back-button {
+    padding: 10px 16px;
+    font-size: var(--text-caption);
+  }
+  
+  .back-button svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+

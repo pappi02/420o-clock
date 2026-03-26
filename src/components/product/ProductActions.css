@@ -1,0 +1,232 @@
+.product-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 24px;
+  background: var(--background-secondary);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-light);
+}
+
+/* Price Section */
+.price-section {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.price-wrapper {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.price-currency {
+  font-size: var(--text-body-lg);
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.price-value {
+  font-size: var(--text-display);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.original-price {
+  font-size: var(--text-body);
+  color: var(--text-tertiary);
+  text-decoration: line-through;
+}
+
+.price-each {
+  font-size: var(--text-body-sm);
+  color: var(--text-tertiary);
+}
+
+/* Quantity Section */
+.quantity-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.quantity-label {
+  font-size: var(--text-body-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Add to Cart Button */
+.add-to-cart-btn-large {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 24px;
+  background: var(--brand-midnight);
+  color: white;
+  border: none;
+  border-radius: var(--radius-lg);
+  font-size: var(--text-body-lg);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.add-to-cart-btn-large:hover {
+  background: #153D38;
+  transform: translateY(-2px);
+  box-shadow: var(--hover-shadow);
+}
+
+.add-to-cart-btn-large.adding {
+  background: var(--brand-sage);
+  cursor: wait;
+}
+
+.add-to-cart-btn-large.added {
+  background: var(--success);
+}
+
+.cart-icon {
+  font-size: 1.25rem;
+}
+
+/* Subscribe Button */
+.subscribe-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 24px;
+  background: transparent;
+  color: var(--brand-midnight);
+  border: 2px solid var(--brand-midnight);
+  border-radius: var(--radius-lg);
+  font-size: var(--text-body);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.subscribe-btn:hover {
+  background: var(--brand-midnight);
+  color: white;
+}
+
+.subscribe-icon {
+  font-size: 1.125rem;
+}
+
+/* Delivery Info */
+.delivery-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-light);
+}
+
+.delivery-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.delivery-icon {
+  font-size: 1.125rem;
+  flex-shrink: 0;
+}
+
+.delivery-text {
+  font-size: var(--text-body-sm);
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.delivery-text strong {
+  color: var(--text-primary);
+}
+
+/* Stock Status */
+.stock-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--text-body-sm);
+  font-weight: 500;
+}
+
+.stock-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--success);
+}
+
+.stock-status.in-stock {
+  color: var(--success);
+}
+
+.stock-status.low-stock {
+  color: var(--warning);
+}
+
+.stock-status.low-stock .stock-dot {
+  background: var(--warning);
+}
+
+.stock-status.out-of-stock {
+  color: var(--error);
+}
+
+.stock-status.out-of-stock .stock-dot {
+  background: var(--error);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .product-actions {
+    padding: 20px;
+  }
+  
+  .price-value {
+    font-size: 2rem;
+  }
+  
+  .add-to-cart-btn-large {
+    padding: 14px 20px;
+    font-size: var(--text-body);
+  }
+  
+  .subscribe-btn {
+    padding: 12px 20px;
+    font-size: var(--text-body-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .product-actions {
+    padding: 16px;
+    gap: 16px;
+  }
+  
+  .price-value {
+    font-size: 1.75rem;
+  }
+  
+  .add-to-cart-btn-large {
+    flex-direction: column;
+    gap: 8px;
+    padding: 16px;
+  }
+  
+  .add-to-cart-btn-large .cart-icon {
+    display: none;
+  }
+}
+
